@@ -1,5 +1,6 @@
 from typing import Any, typevar
 from asyncio.events import AbstractEventLoop
+from asyncio.futures import Future
 # __all__ = ['coroutine', 'Task',
 #            'iscoroutinefunction', 'iscoroutine',
 #            'FIRST_COMPLETED', 'FIRST_EXCEPTION', 'ALL_COMPLETED',
@@ -11,4 +12,4 @@ __all__ = ['coroutine', 'sleep']
 
 T = typevar('T')
 def coroutine(f: Any) -> Any: pass
-def sleep(delay: float, result: T=None, loop: AbstractEventLoop=None) -> T: pass
+def sleep(delay: float, result: T=None, loop: AbstractEventLoop=None) -> Future[result]: pass
